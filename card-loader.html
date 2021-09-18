@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+        rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #eee;
+        }
+
+        .card {
+            background: #fff;
+            position: relative;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
+            width: 45rem;
+            overflow: hidden;
+        }
+
+        .img-cont {
+            height: 30rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-avatar-cont {
+            width: 6rem;
+            height: 6rem;
+            margin-right: 2rem;
+            border-radius: 50rem;
+            overflow: hidden;
+        }
+
+        .user-avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .user-details {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .user-name {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .user-profession {
+            font-size: 1.3rem;
+            color: #999;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* skeleton class */
+
+        .card--skeleton .img-cont {
+            background: #eee;
+        }
+
+        .card--skeleton .user-avatar-cont {
+            background: #eee;
+        }
+
+        .card--skeleton .user-name span,
+        .card--skeleton .user-profession span {
+            background: #eee;
+            color: #eee;
+            border-radius: 5px;
+        }
+
+        .card--skeleton::before {
+            content: '';
+            position: absolute;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.9),
+                    transparent);
+            width: 50%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        @keyframes loading {
+            0% {
+                transform: skewX(-10deg) translateX(-100%);
+            }
+
+            100% {
+                transform: skewX(-10deg) translateX(200%);
+            }
+        }
+
+        .card--skeleton::before {
+
+            /* Refer the Keyframe inside the Animation */
+            animation: loading 0.6s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card card--skeleton">
+            <div class="img-cont">
+                <!-- Removed Image -->
+            </div>
+            <div class="user-info">
+                <div class="user-avatar-cont">
+                    <!-- Removed Image -->
+                </div>
+                <div class="user-details">
+                    <div class="user-name"><span>Natalia Rodrigues</span></div>
+                    <div class="user-profession"><span>Food Blogger</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="img-cont">
+                <img class="img"
+                    src="https://images.unsplash.com/photo-1594398028856-f253a046f417?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80"
+                    alt="Food image" />
+            </div>
+            <div class="user-info">
+                <div class="user-avatar-cont">
+                    <img src="https://i.ibb.co/JzNYHV9/image-1.jpg" alt="User Image" class="user-avatar-img" />
+                </div>
+                <div class="user-details">
+                    <div class="user-name"><span>Natalia Rodrigues</span></div>
+                    <div class="user-profession"><span>Food Blogger</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
